@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dashboard_bisq_easy">Introducing the new \'Bisq Easy\' chat based trade protocol</string>
+    <string name="dashboard_chat">Community focus with discussion chat, academy and event space</string>
+    <string name="dashboard_trade_apps">More trade protocols coming soon:\nMultisig, Lightning, Monero, Liquid,...</string>
+    <string name="welcome_line2">What\'s new</string>
+    <string name="home_button_start">Start</string>
+</resources>

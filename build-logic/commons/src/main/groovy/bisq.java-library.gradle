@@ -1,0 +1,8 @@
+plugins {
+    id 'bisq.java-conventions'
+}
+
+dependencies {
+    api platform('bisq.platforms:common-platform')
+    implementation 'bisq:common'
+}

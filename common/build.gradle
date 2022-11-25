@@ -1,0 +1,52 @@
+plugins {
+    id 'java-library'
+    id "com.google.protobuf"
+//    id 'io.freefair.lombok' version "6.5.0.2"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+sourceSets {
+    // Encapsulates configurations for the main source set.
+    main {
+        // Changes the directory for Java sources. The default directory is
+        // 'src/main/java'.
+        java.srcDirs = ['src/main/java', 'build/generated/source/proto/main/java']
+    }
+}
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.2'
+    implementation 'org.jetbrains:annotations:23.0.0'
+    implementation 'com.google.guava:guava:31.1-jre'
+    compileOnly 'org.slf4j:slf4j-api:1.7.32'
+    testAnnotationProcessor 'org.slf4j:slf4j-api:1.7.32'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    implementation 'ch.qos.logback:logback-classic:1.2.11'
+    testImplementation 'ch.qos.logback:logback-classic:1.2.11'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
+    implementation 'com.typesafe:config:1.4.2'
+    implementation 'org.apache.commons:commons-lang3:3.0'
+}
+
+protobuf {
+    protoc {
+        // You still need protoc like in the non-Android case
+        artifact = 'com.google.protobuf:protoc:3.21.2'
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option "lite"
+                }
+            }
+        }
+    }
+}

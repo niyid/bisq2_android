@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    apply plugin: 'com.google.protobuf'
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.2'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'org.apache.commons:commons-compress:1.21'
+    implementation 'org.tukaani:xz:1.7'
+    implementation project(path: ':common')
+    implementation 'com.github.chimp1984.netlayer:tor.native:fcf7161'
+    implementation 'com.github.chimp1984:tor-binary:56b7c8c'
+    implementation 'org.slf4j:slf4j-api:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+}
+

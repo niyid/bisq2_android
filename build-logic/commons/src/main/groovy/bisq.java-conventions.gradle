@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "bisq2.mobile.android"
+        minSdk 28
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    namespace 'bisq2.mobile.android'
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+
+    implementation libs.slf4j.api
+    implementation libs.logback.core
+    implementation libs.logback.classic
+
+    testAnnotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testImplementation libs.junit.jupiter
+}
+
+test {
+    useJUnitPlatform()
+    exclude '**/**Integration*'
+}

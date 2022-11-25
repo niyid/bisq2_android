@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    apply plugin: 'com.google.protobuf'
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.2'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'net.i2p.client:streaming:1.8.0'
+    implementation 'net.i2p:i2p:1.8.0'
+    implementation 'net.i2p:router:1.8.0'
+    implementation 'org.slf4j:slf4j-api:2.0.4'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    implementation project(path: ':common')
+}
