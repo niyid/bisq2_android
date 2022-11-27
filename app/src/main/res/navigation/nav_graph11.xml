@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/First11Fragment"
-        android:name="bisq2.mobile.android.First11Fragment"
+        android:name="com.bisq2.mobile.android.First11Fragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first11">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second11Fragment"
-        android:name="bisq2.mobile.android.Second11Fragment"
+        android:name="com.bisq2.mobile.android.Second11Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second11">
 

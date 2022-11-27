@@ -75,24 +75,26 @@ public class Tor {
     @Getter
     private final AtomicReference<State> state = new AtomicReference<>(State.NOT_STARTED);
 
+    private static int processId;
     private int proxyPort = -1;
 
-    public static Tor getTor(String torDirPath) {
+    public static Tor getTor(String torDirPath, int processId) {
+        Tor.processId = processId;
         Tor tor;
         synchronized (TOR_BY_APP) {
             if (TOR_BY_APP.containsKey(torDirPath)) {
                 tor = TOR_BY_APP.get(torDirPath);
             } else {
-                tor = new Tor(torDirPath);
+                tor = new Tor(torDirPath, processId);
                 TOR_BY_APP.put(torDirPath, tor);
             }
         }
         return tor;
     }
 
-    private Tor(String torDirPath) {
+    private Tor(String torDirPath, int processId) {
         this.torDirPath = torDirPath;
-        torBootstrap = new TorBootstrap(torDirPath);
+        torBootstrap = new TorBootstrap(torDirPath, processId);
         torController = new TorController(torBootstrap.getCookieFile());
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

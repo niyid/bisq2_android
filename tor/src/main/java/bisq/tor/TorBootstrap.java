@@ -44,8 +44,11 @@ class TorBootstrap {
 
     private volatile boolean isStopped;
 
-    TorBootstrap(String torDirPath) {
+    private int processId;
+
+    TorBootstrap(String torDirPath, int processId) {
         this.torDirPath = torDirPath;
+        this.processId = processId;
 
         torDir = new File(torDirPath);
         dotTorDir = new File(torDirPath, Constants.DOT_TOR_DIR);
@@ -176,7 +179,7 @@ class TorBootstrap {
 //        String processName = ManagementFactory.getRuntimeMXBean().getName();
         //TODO(xineohp2021) Replace with alternative to ManagementFactory; fetch process PID
 //        String ownerPid = processName.split("@")[0];
-        String ownerPid = "242342@PID".split("@")[0];
+        String ownerPid = Integer.toString(processId);
         log.debug("Owner pid {}", ownerPid);
         FileUtils.writeToFile(ownerPid, pidFile);
 

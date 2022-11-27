@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="bisq2.mobile.android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.bisq2.mobile.android">
 
     <application
         android:allowBackup="true"
@@ -60,7 +59,7 @@
             android:label="@string/title_activity_select_market"
             android:theme="@style/Theme.Bisq2Mobile.NoActionBar" />
         <activity
-            android:name=".TradingBtcActivity"
+            android:name=".TradeBtcActivity"
             android:exported="false"
             android:label="@string/title_activity_trading_btc"
             android:theme="@style/Theme.Bisq2Mobile" />

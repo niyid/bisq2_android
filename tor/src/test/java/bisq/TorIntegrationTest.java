@@ -41,7 +41,7 @@ public class TorIntegrationTest {
         File versionFile = new File(torDirPath + "/" + Constants.VERSION);
         FileUtils.deleteDirectory(new File(torDirPath));
         assertFalse(versionFile.exists());
-        Tor tor = Tor.getTor(torDirPath);
+        Tor tor = Tor.getTor(torDirPath, 0);//TODO(xineohp2021) Ensure change works
         new Thread(() -> {
             try {
                 Thread.sleep(200);

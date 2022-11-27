@@ -18,7 +18,7 @@ public class BlockingTorBootstrapIntegrationTest extends AbstractTorTest {
             String torDirPathSpec = torTestDirPathSpec.get();
             cleanTorInstallDir(torDirPathSpec);
 
-            tor = Tor.getTor(torDirPathSpec);
+            tor = Tor.getTor(torDirPathSpec,0);//TODO(xineohp2021) Ensure change works
             tor.start();
             torServerSocket = startServer();
             onionAddress = torServerSocket.getOnionAddress()
