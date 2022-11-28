@@ -18,7 +18,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk11"
 }
 
 compileKotlin {
