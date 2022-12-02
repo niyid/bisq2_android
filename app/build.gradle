@@ -24,9 +24,8 @@ android {
         }
     }
     packagingOptions {
-        resources {
-            excludes += ['torrc.defaults', '**/torrc']
-        }
+        exclude 'torrc.defaults'
+        exclude '**/torrc'
     }
 
     compileOptions {
