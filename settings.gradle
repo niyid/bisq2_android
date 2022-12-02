@@ -23,5 +23,3 @@ include ':persistence'
 include ':i18n'
 include ':i2p'
 include ':common'
-
-includeBuild('bisq')
