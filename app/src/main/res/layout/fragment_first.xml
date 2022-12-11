@@ -4,33 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".FirstFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        />
+            android:gravity="center"
+            android:text="Set up user profile"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textview_first"
+            android:id="@+id/welcomeTexzt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/roboHashText"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+
+        <io.getstream.avatarview.AvatarView
+            android:id="@+id/avatarProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_first" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginBottom="36dp"
+            app:avatarViewInitials="U"
+            app:avatarViewBorderColor="@color/white"
+            app:avatarViewBorderWidth="3dp"
+            app:avatarViewIndicatorBorderColor="@color/white"
+            app:avatarViewIndicatorBorderSizeCriteria="10"
+            app:avatarViewIndicatorColor="@color/white"
+            app:avatarViewIndicatorEnabled="true"
+            app:avatarViewIndicatorPosition="bottomRight"
+            app:avatarViewIndicatorSizeCriteria="9"
+            app:avatarViewInitialsTextStyle="bold"
+            app:avatarViewPlaceholder="@drawable/ic_dashboard_bisq_logo_background"
+            app:avatarViewShape="circle" />
+
+        <TextView
+            android:id="@+id/uniqueId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="UNIQUE ID"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/uniqueIdValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Repeatedly-professional_Itinerary-410"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <top.defaults.view.TextButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RE-GENERATE"
+            android:layout_gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:textSize="12sp"
+
+            app:defaultTextColor="@android:color/darker_gray"
+            app:pressedTextColor="@color/green_kelly"
+            app:disabledTextColor="@android:color/darker_gray"
+            app:underline="true"
+            app:effectDuration="200"
+            app:textEffect="animateColor"
+            app:backgroundEffect="ripple"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextProfileButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:backgroundTint="@color/green_kelly"
+            app:cornerRadius="4dp"
+            app:rippleColor="#33AAAAAA"
+
+            />
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textview_first"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:text="``"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/button_first" />-->
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>

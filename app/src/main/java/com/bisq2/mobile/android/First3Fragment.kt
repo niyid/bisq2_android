@@ -32,7 +32,7 @@ class First3Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
+        binding.imagewccView.setOnClickListener {
             findNavController().navigate(R.id.action_First3Fragment_to_Second3Fragment)
         }
     }
