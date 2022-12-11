@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
     android:background="?attr/fullscreenBackgroundColor"
+    android:divider="@drawable/divider40p"
     android:gravity="center"
     android:orientation="vertical"
-    android:divider="@drawable/divider40p"
     android:showDividers="middle"
     android:theme="@style/ThemeOverlay.Bisq2Mobile.FullscreenContainer"
     tools:context=".HomeActivity">
@@ -25,8 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        app:srcCompat="@mipmap/ic_dashboard_bisq_logo"
-        android:contentDescription="@string/welcome" />
+        android:contentDescription="@string/welcome"
+        app:srcCompat="@mipmap/ic_dashboard_bisq_logo" />
 
     <TextView
         android:id="@+id/welcomeText"
@@ -34,9 +34,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/welcome"
+        android:textColor="@color/green_kelly"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/green_kelly" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/welcomeLine2Text"
@@ -44,54 +44,112 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/welcome_line2"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:textAlignment="gravity"
         android:textAllCaps="true"
-        android:textColor="@color/grey" />
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:paddingStart="10dp"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:id="@+id/imagewView"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/welcome"
+            app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+            app:tint="@color/green_kelly" />
+
+        <TextView
+            android:id="@+id/textss"
+            android:layout_width="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="@string/dashboard_bisq_easy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:paddingStart="10dp"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:id="@+id/imagewVidew"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/welcome"
+            app:srcCompat="@drawable/ic_dashboard_chat"
+            app:tint="@color/green_kelly" />
+
+        <TextView
+            android:id="@+id/texxxtss"
+            android:layout_width="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="@string/dashboard_chat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:paddingStart="10dp"
+            android:id="@+id/imagewVicxcxews"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/welcome"
+            app:srcCompat="@drawable/ic_dashboard_trade_apps"
+            app:tint="@color/green_kelly" />
+        <TextView
+            android:id="@+id/texxxtsds"
+            android:layout_width="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="@string/dashboard_chat" />
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/iconDashboardBisq"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@color/grey_charcoal_3"
-        app:icon="@drawable/ic_dashboard_bisq_easy"
-        app:backgroundTint="@color/grey_charcoal_3"
-        android:text="@string/dashboard_bisq_easy"
-        android:onClick="navigateToBisqEasy"
-        android:textAllCaps="false" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/iconDashboardChat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@color/grey_charcoal_3"
-        app:icon="@drawable/ic_dashboard_chat"
-        app:backgroundTint="@color/grey_charcoal_3"
-        android:text="@string/dashboard_chat"
-        android:onClick="navigateToDashboardChat"
-        android:textAllCaps="false" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/iconDashboardTrade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        app:icon="@drawable/ic_dashboard_trade_apps"
-        app:backgroundTint="@color/grey_charcoal_3"
-        android:text="@string/dashboard_trade_apps"
-        android:onClick="navigateToTradeApps"
-        android:textAllCaps="false" />
-
-    <Button
-        android:id="@+id/buttonStart"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home_button_start"
-        android:onClick="startButtonClick"
-        app:backgroundTint="@color/grey_charcoal_3" />
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="8dp"
+        app:rippleColor="#33AAAAAA"
+        android:textAllCaps="false"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
 
     <ProgressBar
         android:id="@+id/progressBar"

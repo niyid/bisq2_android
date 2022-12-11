@@ -4,33 +4,265 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".First3Fragment">
+    android:background="@color/grey"
+    tools:context=".SecondFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
-
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        />
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="wrap_content"
+            android:id="@+id/AddNickName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_first" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:gravity="left"
+            android:text="How do you want to start?"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:background="@color/grey_charcoal_2"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Create your first offer"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imagewView"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/welcome"
+                    app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+                    app:tint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/welcomeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Create and publish your offer"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <!--            second one-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imagewccView"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/welcome"
+                    app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+                    app:tint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/welcomecscvText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Wait until someone takes your offer. Enter private chat and exchange  payment details."
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <!--            third one-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imagewcxcView"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/welcome"
+                    app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+                    app:tint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/welcomecscvTxext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="As BTC buyer, you need to send Fiat first. Seller sends the Bitcoin after Fiat payment received."
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:text="Create offer"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="@color/green_kelly"
+                app:cornerRadius="8dp"
+                android:textAllCaps="false"
+                app:rippleColor="#33AAAAAA"
+                app:strokeWidth="2dp" />
+        </LinearLayout>
+
+        <!--        second option  - browse existing offers-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/grey_charcoal_2"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/cs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Browse existing offers"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imagdewView"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/welcome"
+                    app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+                    app:tint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/welccomeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Check out the offers in the trade chat"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <!--            second one-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imagcewccView"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/welcome"
+                    app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+                    app:tint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/welcomeccscvText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Take an offer and start a private chat with the seller to exchange the payment details.."
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <!--            third one-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imagewcxccView"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/welcome"
+                    app:srcCompat="@drawable/ic_dashboard_bisq_easy"
+                    app:tint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/welcomecscvcTxext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="As BTC buyer, you need to send Fiat first. Seller sends the Bitcoin after Fiat payment received."
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content"
+                android:text="Browse offers"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:cornerRadius="8dp"
+                app:rippleColor="#33AAAAAA"
+                android:textAllCaps="false"
+                app:strokeWidth="2dp" />
+        </LinearLayout>
+        <Switch
+            android:id="@+id/simpleSwitch"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:text="@string/don_t_show_introduction_screen_again"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>
