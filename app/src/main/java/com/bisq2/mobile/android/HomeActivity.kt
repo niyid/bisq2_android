@@ -1,20 +1,27 @@
 package com.bisq2.mobile.android
 
 import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
+import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
+import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.Handler
+import android.os.IBinder
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bisq2.mobile.android.controllers.GoogleSearchService
-import com.bisq2.mobile.android.controllers.TorLauncherService
 import com.bisq2.mobile.android.databinding.ActivityHomeBinding
 import com.bisq2.mobile.android.network.RetrofitAPIClient
 import com.bisq2.mobile.android.network.RetrofitCallback
-import retrofit2.Call
+import org.torproject.jni.TorService
 
 
 /**
@@ -27,20 +34,53 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
     private lateinit var fullscreenContentControls: LinearLayout
     private val hideHandler = Handler(Looper.myLooper()!!)
+    private val logTag = "HomeActivity"
 
     fun startButtonClick(view: View) {
-        intent = Intent(this, TorLauncherService::class.java)
-        startService(intent)
+        registerReceiver(object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent) {
+                val status: String? = intent.getStringExtra(TorService.EXTRA_STATUS)
+                Toast.makeText(context, status, Toast.LENGTH_SHORT).show()
+            }
+        }, IntentFilter(TorService.ACTION_STATUS))
+        bindService(Intent(this, TorService::class.java), object : ServiceConnection {
+            override fun onServiceConnected(name: ComponentName?, service: IBinder) {
+                progressBar.visibility = View.VISIBLE
+                //moved torService to a local variable, since we only need it once
+                val torService: TorService = (service as TorService.LocalBinder).getService()
+                while (torService.getTorControlConnection() == null) {
+                    try {
+                        Thread.sleep(500)
+                    } catch (e: InterruptedException) {
+                        e.printStackTrace()
+                    }
+                }
+                progressBar.visibility = View.GONE
+                torService.dataDir
+                val torrc = TorService.getTorrc(applicationContext)
+                val torrcDef = TorService.getDefaultsTorrc(applicationContext)
+                Log.i(logTag, "Tor torrc: $torrc")
+                Log.i(logTag, "Tor defaults: $torrcDef")
+                Log.i(logTag, "Tor data dir: ${torService.dataDir}")
+                Log.i(logTag, "Tor files dir: ${torService.filesDir}")
+                Log.i(logTag, "Tor cache dir: ${torService.cacheDir}")
+
+                Toast.makeText(this@HomeActivity, "Got Tor control connection", Toast.LENGTH_LONG)
+                    .show()
+            }
+
+            override fun onServiceDisconnected(name: ComponentName?) {}
+        }, BIND_AUTO_CREATE)
     }
 
     fun navigateToBisqEasy(view: View) {
         //TODO Launch service to prepare Bisq Easy
-        startActivity(Intent(this, BisqEasyActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     fun navigateToDashboardChat(view: View) {
         //TODO Launch service to prepare Join Community
-        startActivity(Intent(this, JoinCommunityActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     fun navigateToTradeApps(view: View) {
@@ -57,7 +97,7 @@ class HomeActivity : AppCompatActivity() {
         })
 
         //TODO Launch service to prepare Trade Apps
-        startActivity(Intent(this, TradeAppsActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
 
     }
 
@@ -87,10 +127,11 @@ class HomeActivity : AppCompatActivity() {
         isFullscreen = true
 
         progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        progressBar.visibility = View.GONE
 //        fullscreenContentControls = findViewById<LinearLayout>(R.id.homeLayout)
 
-
     }
+
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)

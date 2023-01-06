@@ -1,33 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profileLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.bisq2.mobile.android.ProfileActivity">
+    android:layout_gravity="center_vertical"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:divider="@drawable/divider40p"
+    android:showDividers="middle"
+    android:theme="@style/ThemeOverlay.Bisq2Mobile.FullscreenContainer"
+    tools:context=".ProfileActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <TextView
+        android:id="@+id/welcomeProfileText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:gravity="center"
+        android:text="@string/welcome_profile"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+    <TextView
+        android:id="@+id/welcomeProfileLine2Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/welcome_profile_line2"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/grey" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@mipmap/welcome_profile"
+        android:contentDescription="@string/welcome_profile" />
 
-    <include layout="@layout/content_profile" />
+    <TextView
+        android:id="@+id/uniqueIdLabelText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/unique_id_label"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:textAllCaps="true"
+        android:textColor="@color/grey" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <TextView
+        android:id="@+id/uniqueIdText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/unique_id_placeholder"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/regenerateText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/regenerate_line"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:textAllCaps="true"
+        android:textColor="@color/grey" />
+
+    <Button
+        android:id="@+id/nextStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:text="@string/profile_button_next"
+        android:onClick="startButtonClick"
+        app:backgroundTint="@color/green_kelly" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

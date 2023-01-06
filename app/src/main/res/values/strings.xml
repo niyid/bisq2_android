@@ -18,6 +18,7 @@
     <string name="server_not_responding">Server not responding</string>
     <string name="no_internet">No Internet</string>
     <string name="connection_timeout">Connection timeout</string>
+    <string name="home_welcome">"Buy and sell bitcoin for fiat \n(or other cryptocurrencies) privately \nand securely using Bisq's peer-to-peer \nnetwork and open-source desktop \nsoftware. No registration required."</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -158,4 +159,75 @@
     <string name="title_activity_offer_list_sell">OfferListSellActivity</string>
     <string name="title_activity_private_channel_offers">PrivateChannelOffersActivity</string>
     <string name="title_activity_join_community">JoinCommunityActivity</string>
+    <string name="welcome_profile">Set up user profile</string>
+    <string name="welcome_profile_line2">"Generate a Robo-hash user icon and unique id\nderived from your public key"</string>
+    <string name="unique_id_label">UNIQUE ID</string>
+    <string name="unique_id_placeholder">Repeatedly-Professional-Itinerary-410</string>
+    <string name="regenerate_line">RE-GENERATE</string>
+    <string name="profile_button_next">Next</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">UNIQUE ID</string>
+    <string name="nav_header_subtitle">Repeatedly-Professional-Itinerary-410</string>
+    <string name="nav_header_desc">User Profile</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_wallet">Wallet</string>
+    <string name="menu_events">Events</string>
+    <string name="menu_chat">Chat</string>
+    <string name="menu_learn">Learn</string>
+    <string name="menu_trade_apps">Trade apps</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_bisq_easy">Bisq Easy</string>
+    <string name="menu_liquid_swaps">Liquid Swaps</string>
+    <string name="menu_bisq_multisig">Bisq Multisig</string>
+    <string name="menu_xmr_swaps">XMR Swaps</string>
+    <string name="lightning_mpc">Lightning MPC</string>
+    <string name="menu_bsq_swaps">BSQ Swaps</string>
+    <string name="create_your_first_offer">Create your first offer</string>
+    <string name="browse_existing_offers">Browse existing offers</string>
+    <string name="how_do_you_want_to_start">How do you want to start?</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bisq_easy_create_and_publish_your_offer">Create and publish your offer</string>
+    <string name="bisq_easy_check_out_offers">Check out the offers in the trade chat</string>
+    <string name="bisq_easy_send_fiat_first">As BTC buyer, you need to send Fiat first. Seller sends the Bitcoin after Fiat payment received.</string>
+    <string name="bisq_easy_enter_private_chat">Wait until someone takes your offer. Enter private chat and exchange payment details.</string>
+    <string name="bisq_easy_action_create_offer">Create offer</string>
+    <string name="bisq_easy_show_intro">Don\'t show introduction screen again</string>
+    <string name="bisq_easy_enter_private_chat2">Take an offer and start a private chat with the seller to exchange the payment details.</string>
+    <string name="bisq_easy_action_browse_offers">Browse offers</string>
+    <string name="profile_set_nickname">Set Nickname</string>
+    <string name="trading_home_top_title">Get your first BTC</string>
+    <string name="trading_home_create_offers">Create an offer or browse the trade chat for open offers</string>
+    <string name="trading_home_private_chat">Exchange the trade details in a private chat with your peer</string>
+    <string name="bisq_easy_nav_2_action">Enter Bisq Easy</string>
+    <string name="trading_home_reputation">Security is based on seller\'s reputation</string>
+    <string name="trading_apps">Trade apps</string>
+    <string name="trade_apps_explainer">Check out the roadmap for the new trade protocols. Bisq Easy is the first one deployed.</string>
+    <string name="trade_apps_nav_2_action">Explore trade apps</string>
+    <string name="join_community_nav_2_action">Join the community</string>
+    <string name="join_community_explainer">Discuss with other Bisq users in the community chat. Learn all things Bitcoin and explore the events space.</string>
+    <string name="join_community">Join the community</string>
+    <string name="zero_currency">0.00</string>
+    <string name="default_btc_rate">BTC/EUR</string>
+    <string name="latest_market_price_label">Latest market price</string>
+    <string name="online_count_label">Others online</string>
+    <string name="active_users_label">Active users</string>
+    <string name="zero_integer">0</string>
+    <string name="first">First</string>
+    <string name="last">Last</string>
+    <string name="hello_world">Pager hello world</string>
 </resources>

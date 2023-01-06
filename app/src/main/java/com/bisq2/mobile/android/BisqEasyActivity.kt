@@ -22,8 +22,6 @@ class BisqEasyActivity : AppCompatActivity() {
         binding = ActivityBisqEasyBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-
         val navController = findNavController(R.id.nav_host_fragment_content_bisq_easy)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -4,7 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
-import bisq.tor.Tor
+//import bisq.tor.Tor
 
 import java.nio.file.Paths
 
@@ -32,8 +32,9 @@ class TorLauncherService : Service() {
         //set default instance, so it can be omitted whenever creating Tor (Server)Sockets
         //This will take some time
         Log.i(TAG, "Current path:$path")
-        var tor = Tor.getTor("res/tor", pid)
-        tor.start();
+//TODO Move tor functionality from HomeActivity to TorController
+//        var tor = Tor.getTor("res/tor", pid)
+//        tor.start();
 
         Log.i(TAG, "Service onStartCommand ends")
         return START_NOT_STICKY

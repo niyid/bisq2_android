@@ -82,7 +82,7 @@ public class DecimalFormatters {
     }
 
     private static String getPattern(int precision) {
-        //TODO(xineohp2021) Ensure change works
+        
         return "0." + StringUtils.repeat("0", Math.max(0, precision));
     }
 }

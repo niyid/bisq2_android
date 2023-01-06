@@ -26,7 +26,7 @@ public class AsyncTorBootstrapIntegrationTest extends AbstractTorTest {
         try {
             String torDirPathSpec = torTestDirPathSpec.get();
             cleanTorInstallDir(torDirPathSpec);
-            tor = Tor.getTor(torDirPathSpec,0);//TODO(xineohp2021) Ensure change works
+            tor = Tor.getTor(torDirPathSpec);
 
             CountDownLatch latch = new CountDownLatch(1);
             tor.startAsync(Executors.newSingleThreadExecutor())
@@ -55,7 +55,7 @@ public class AsyncTorBootstrapIntegrationTest extends AbstractTorTest {
     public void testShutdownDuringStartup() {
         String torDirPathSpec = torTestDirPathSpec.get();
         cleanTorInstallDir(torDirPathSpec);
-        tor = Tor.getTor(torDirPathSpec,0);//TODO(xineohp2021) Ensure change works
+        tor = Tor.getTor(torDirPathSpec);
 
         new Thread(() -> {
             try {

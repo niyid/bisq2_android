@@ -79,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        app:icon="@drawable/ic_dashboard_trade_apps"
+        app:icon="@drawable/ic_trade_apps"
         app:backgroundTint="@color/grey_charcoal_3"
         android:text="@string/dashboard_trade_apps"
         android:onClick="navigateToTradeApps"

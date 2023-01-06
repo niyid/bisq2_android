@@ -13,7 +13,7 @@ sourceSets {
     main {
         // Changes the directory for Java sources. The default directory is
         // 'src/main/java'.
-        java.srcDirs = ['src/main/java']
+        java.srcDirs = ['src/main/java', 'build/generated/source/proto/main/java']
     }
 }
 

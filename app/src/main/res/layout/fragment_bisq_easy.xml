@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_charcoal_3"
+    android:orientation="vertical"
+    android:divider="@drawable/divider10p"
+    android:showDividers="middle"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    tools:context=".FragmentBisqEasy">
+
+        <TextView
+            android:id="@+id/bisqEasyTopLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/how_do_you_want_to_start"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:divider="@drawable/divider5p"
+                android:showDividers="middle">
+                <TextView
+                    android:id="@+id/bisqEasyCreateFirstOfferLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_your_first_offer"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iconBisqEasyCreateOffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey_charcoal_3"
+                    app:icon="@drawable/ic_create_offer"
+                    app:backgroundTint="@color/grey_charcoal_3"
+                    android:text="@string/bisq_easy_create_and_publish_your_offer"
+                    android:textSize="12sp"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iconBisqEasyEnterPrivateChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey_charcoal_3"
+                    app:icon="@drawable/ic_enter_private_chat"
+                    app:backgroundTint="@color/grey_charcoal_3"
+                    android:text="@string/bisq_easy_enter_private_chat"
+                    android:textSize="12sp"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iconBisqEasySendFiatFirst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey_charcoal_3"
+                    app:icon="@drawable/ic_bisq_easy_send_fiat_first"
+                    app:backgroundTint="@color/grey_charcoal_3"
+                    android:text="@string/bisq_easy_send_fiat_first"
+                    android:textSize="12sp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/createOffer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bisq_easy_action_create_offer"
+                    android:onClick="createOffer"
+                    app:backgroundTint="@color/green_kelly" />
+
+                <TextView
+                    android:id="@+id/bisqEasyBrowseOffersLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/browse_existing_offers"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iconBisqEasyViewOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey_charcoal_3"
+                    app:icon="@drawable/ic_bisq_easy_list_offers"
+                    app:backgroundTint="@color/grey_charcoal_3"
+                    android:text="@string/bisq_easy_check_out_offers"
+                    android:textSize="12sp"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iconBisqEasyEnterPrivateChat2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey_charcoal_3"
+                    app:icon="@drawable/ic_enter_private_chat"
+                    app:backgroundTint="@color/grey_charcoal_3"
+                    android:text="@string/bisq_easy_enter_private_chat2"
+                    android:textSize="12sp"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/iconBisqEasyViewOffers2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/grey_charcoal_3"
+                    app:icon="@drawable/ic_bisq_easy_send_fiat_first"
+                    app:backgroundTint="@color/grey_charcoal_3"
+                    android:text="@string/bisq_easy_send_fiat_first"
+                    android:textSize="12sp"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/browseOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bisq_easy_action_browse_offers"
+                    android:onClick="browseOffers"
+                    app:backgroundTint="@color/grey" />
+
+                <Switch
+                    android:id="@+id/showIntroductionScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bisq_easy_show_intro"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    tools:targetApi="ice_cream_sandwich" />
+            </LinearLayout>
+
+</LinearLayout>

@@ -1,6 +1,8 @@
 package com.bisq2.mobile.android
 
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -12,27 +14,21 @@ import com.bisq2.mobile.android.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
 
+    private lateinit var progressBar: ProgressBar
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityProfileBinding
-
+    private var isFullscreen: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        isFullscreen = true
 
-        val navController = findNavController(R.id.nav_host_fragment_content_profile)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAnchorView(R.id.fab)
-                .setAction("Action", null).show()
-        }
+        //setSupportActionBar(binding.toolbar)
+        progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        progressBar.visibility = View.GONE
     }
 
     override fun onSupportNavigateUp(): Boolean {

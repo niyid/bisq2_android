@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
 
 object RetrofitAPIClient {
-    const val BASE_URL = "www.google.com"
+    const val BASE_URL = "https://www.google.com"
     private var retrofit: Retrofit? = null
     fun getRetrofitClient(mContext: Context?): Retrofit? {
         if (retrofit == null) {

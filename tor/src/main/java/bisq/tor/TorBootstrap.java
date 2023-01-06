@@ -46,9 +46,8 @@ class TorBootstrap {
 
     private int processId;
 
-    TorBootstrap(String torDirPath, int processId) {
+    TorBootstrap(String torDirPath) {
         this.torDirPath = torDirPath;
-        this.processId = processId;
 
         torDir = new File(torDirPath);
         dotTorDir = new File(torDirPath, Constants.DOT_TOR_DIR);
@@ -199,7 +198,7 @@ class TorBootstrap {
         }
 
         Process process = processBuilder.start();
-        //TODO(xineohp2021) Ensure change works
+        
         log.debug("Process started. pid={} info={}","124444", "Phoenix");
         return process;
     }

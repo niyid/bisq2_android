@@ -44,12 +44,12 @@ public class TorDemo {
     public static void main(String[] args) throws InterruptedException {
         String torDirPath = OsUtils.getUserDataDir() + "/TorDemo";
         //   useBlockingAPI(torDirPath);
-        useNonBlockingAPI(torDirPath, 0);//TODO(xineohp2021) Ensure change works
+        useNonBlockingAPI(torDirPath);
     }
 
-    private static void useBlockingAPI(String torDirPath, int processId) {//TODO(xineohp2021) Ensure change works
+    private static void useBlockingAPI(String torDirPath) {
         try {
-            tor = Tor.getTor(torDirPath, processId);
+            tor = Tor.getTor(torDirPath);
             tor.start();
             TorServerSocket torServerSocket = startServer();
             OnionAddress onionAddress = torServerSocket.getOnionAddress().orElseThrow();
@@ -62,8 +62,8 @@ public class TorDemo {
         }
     }
 
-    private static void useNonBlockingAPI(String torDirPath, int processId) throws InterruptedException {//TODO(xineohp2021) Ensure change works
-        tor = Tor.getTor(torDirPath, processId);
+    private static void useNonBlockingAPI(String torDirPath) throws InterruptedException {
+        tor = Tor.getTor(torDirPath);
         CountDownLatch latch = new CountDownLatch(1);
         tor.startAsync(Executors.newSingleThreadExecutor())
                 .thenCompose(result -> startServerAsync()

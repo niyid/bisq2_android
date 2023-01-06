@@ -64,7 +64,7 @@ public class TorUtils {
 
                 FileOutputStream fileOutputStream = new FileOutputStream(file);
                 try {
-                    IOUtils.copy(tarArchiveInputStream, fileOutputStream);//TODO(xineohp2021) Ensure change works
+                    IOUtils.copy(tarArchiveInputStream, fileOutputStream);
                 } catch (IOException ex) {
                     throw new IOException("Cannot transfer bytes to file " + file.getAbsolutePath(), ex);
                 } finally {

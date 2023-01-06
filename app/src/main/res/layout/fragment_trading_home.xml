@@ -1,0 +1,243 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_charcoal_3"
+    android:orientation="vertical"
+    android:divider="@drawable/divider10p"
+    android:showDividers="middle"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FragmentTradingHome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@drawable/divider5p"
+        android:showDividers="middle"
+        android:background="@color/grey_charcoal_4"
+        android:stretchColumns="0,1,2,3">
+        <TableLayout
+            android:id="@+id/statsTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:paddingVertical="5dp">
+
+            <TableRow
+                android:id="@+id/firstRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/latestMarketPriceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="@string/latest_market_price_label"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/onlineCountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/online_count_label"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey" />
+
+                <TextView
+                    android:id="@+id/activeUsersLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/active_users_label"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/secondRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/btcToFiatAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_currency"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey" />
+
+                <TextView
+                    android:id="@+id/btcToFiatRate"
+                    android:layout_width="121dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/default_btc_rate"
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/onlineCountAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_integer"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey" />
+
+                <TextView
+                    android:id="@+id/activeUsersAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_integer"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@drawable/divider5p"
+        android:showDividers="middle">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconTradingHomeCreateOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/grey_charcoal_3"
+            app:icon="@drawable/ic_create_offer"
+            app:backgroundTint="@color/grey_charcoal_3"
+            android:text="@string/trading_home_create_offers"
+            android:textSize="11sp"
+            android:textAllCaps="false" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconTradingHomePrivateChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/grey_charcoal_3"
+            app:icon="@drawable/ic_enter_private_chat"
+            app:backgroundTint="@color/grey_charcoal_3"
+            android:text="@string/trading_home_private_chat"
+            android:textSize="11sp"
+            android:textAllCaps="false" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconTradingHomeSecurity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/grey_charcoal_3"
+            app:icon="@drawable/ic_security"
+            app:backgroundTint="@color/grey_charcoal_3"
+            android:text="@string/trading_home_reputation"
+            android:textSize="11sp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/navigateToBisqEasy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bisq_easy_nav_2_action"
+            android:onClick="navigateToBisqEasy"
+            app:backgroundTint="@color/green_kelly" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@drawable/divider5p"
+        android:showDividers="middle">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconTradingHomeTradeApps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/grey_charcoal_3"
+            app:icon="@drawable/ic_trade_apps"
+            app:iconSize="48dp"
+            app:backgroundTint="@color/grey_charcoal_3"
+            android:text="@string/trading_apps"
+            android:textSize="24sp"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tradeAppsExplainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trade_apps_explainer"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/grey" />
+
+        <Button
+            android:id="@+id/navigateToTradeApps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trade_apps_nav_2_action"
+            android:onClick="navigateToTradeApps"
+            app:backgroundTint="@color/grey" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@drawable/divider5p"
+        android:showDividers="middle">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconTradingHomeJoinCommunity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/grey_charcoal_3"
+            app:icon="@drawable/ic_community"
+            app:iconSize="48dp"
+            app:backgroundTint="@color/grey_charcoal_3"
+            android:text="@string/join_community"
+            android:textSize="24sp"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/joinCommunityExplainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/join_community_explainer"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/grey" />
+
+        <Button
+            android:id="@+id/navigateToJoinCommunity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/join_community_nav_2_action"
+            android:onClick="navigateToJoinCommunity"
+            app:backgroundTint="@color/grey" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+</LinearLayout>

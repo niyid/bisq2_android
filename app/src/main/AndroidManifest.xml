@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,87 +11,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bisq2Mobile">
         <activity
-            android:name=".JoinCommunityActivity"
-            android:exported="false"
-            android:label="@string/title_activity_join_community"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".PrivateChannelOffersActivity"
-            android:exported="false"
-            android:label="@string/title_activity_private_channel_offers"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".OfferListSellActivity"
-            android:exported="false"
-            android:label="@string/title_activity_offer_list_sell"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".PostSellOfferActivity"
-            android:exported="false"
-            android:label="@string/title_activity_post_sell_offer"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".TradeAppsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_trade_apps"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".OfferListBuyActivity"
-            android:exported="false"
-            android:label="@string/title_activity_offer_list_buy"
-            android:theme="@style/Theme.Bisq2Mobile.NoActionBar" />
-        <activity
-            android:name=".PostBuyOfferActivity"
-            android:exported="false"
-            android:label="@string/title_activity_post_buy_offer"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".PaymentMethodActivity"
-            android:exported="false"
-            android:label="@string/title_activity_payment_method"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".TradeAmountActivity"
-            android:exported="false"
-            android:label="@string/title_activity_trade_amount"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".SelectMarketActivity"
-            android:exported="false"
-            android:label="@string/title_activity_select_market"
-            android:theme="@style/Theme.Bisq2Mobile.NoActionBar" />
-        <activity
-            android:name=".TradeBtcActivity"
-            android:exported="false"
-            android:label="@string/title_activity_trading_btc"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".BisqEasyActivity"
-            android:exported="false"
-            android:label="@string/title_activity_bisq_easy"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".TradingHomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_trading_home"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.Bisq2Mobile" />
-        <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Bisq2Mobile.Fullscreen">
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Bisq2Mobile.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TradeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Bisq2Mobile.NoActionBar" />
 
         <service
             android:name=".controllers.TorLauncherService"
