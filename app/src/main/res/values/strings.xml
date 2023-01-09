@@ -181,6 +181,7 @@
     <string name="menu_chat">Chat</string>
     <string name="menu_learn">Learn</string>
     <string name="menu_trade_apps">Trade apps</string>
+    <string name="menu_new_trade_apps">New Trade apps</string>
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_bisq_easy">Bisq Easy</string>
     <string name="menu_liquid_swaps">Liquid Swaps</string>
@@ -230,4 +231,9 @@
     <string name="first">First</string>
     <string name="last">Last</string>
     <string name="hello_world">Pager hello world</string>
+    <string name="markets">MARKETS</string>
+    <string name="release">RELEASE</string>
+    <string name="convenience">CONVENIENCE</string>
+    <string name="security">SECURITY</string>
+    <string name="privacy">PRIVACY</string>
 </resources>
