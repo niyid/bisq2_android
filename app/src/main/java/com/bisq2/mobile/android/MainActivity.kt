@@ -87,6 +87,14 @@ class MainActivity : AppCompatActivity() {
                             e.printStackTrace()
                         }
                     }
+                    R.id.nav_new_trade_apps -> {
+                        Log.i(logTag, "onNavigationItemSelecteds-${item.itemId}")
+                        try {
+                            navController.navigate(R.id.transition_2_trade_apps)
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                        }
+                    }
                     R.id.nav_dashboard -> {
                         Log.i(logTag, "onNavigationItemSelected-${item.itemId}")
                         try {
