@@ -15,7 +15,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Bisq2 Mobile"
+rootProject.name = "Bisq2Mobile"
 include ':app'
 include ':tor'
 include ':platforms'
